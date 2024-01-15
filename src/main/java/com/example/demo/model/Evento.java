@@ -1,10 +1,16 @@
 package com.example.demo.model;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-
-public class Evento {
-
+@Entity
+public class Evento implements Serializable{
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idEvento;
 	private LocalDate data;
 	private String titulo;
